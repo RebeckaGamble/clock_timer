@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pageTitle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 44px;
+  font-size: 36px;
+  /*text-shadow: 0.5px 1px #fff;*/
+  color: rgb(201, 188, 180);
+}
+
+.clockContainer {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(to top right, #e4e8ea, rgb(209, 147, 96));
+  box-shadow: 0 0 10px rgba(196, 243, 67, 0.7);
+  z-index: 10;
+}
+
+.clockTitle {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.counterContainer {
+  width: full;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.countDown {
+  display: flex;
+  border: 4px solid #fff;
+  width: 140px;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 600;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 24px;
+  gap: 16px;
+}
+
+button {
+  cursor: pointer;
+  height: 40px;
+  width: 140px;
+  color: black;
+  font-weight: 600;
+  border-radius: 4px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  background-color: rgb(201, 188, 180);
+  z-index: 12;
+  transition: background-color 0.25s ease-in-out, color 0.25s;
+}
+
+button:hover {
+  background-color: rgb(31, 19, 167);
+  border: 2px solid white;
+  color: #fff;
+}
+
+button:disabled {
+  background-color: rgb(223, 220, 220);
+  color: gray;
+  cursor: not-allowed;
+}
+
+button:focus {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.starBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.moon {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  background: linear-gradient(to top right, #143b54, rgba(222, 239, 95, 0.9));
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  background: linear-gradient(to top right, #c7cdd0, rgba(222, 239, 95, 0.9));
+  width: 1px;
+  height: 1px;
+  animation: twinkling 3s infinite;
+}
+
+@keyframes twinkling {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.fallingStarContainer {
+  position: relative;
+  width: 500px;
+}
+
+.fallingStar {
+  position: absolute;
+  width: 0.5px;
+  height: 20px;
+  transform: rotate(-42deg);
+  background: linear-gradient(to top right, #c7cdd0, rgba(222, 239, 95, 0.9));
+  animation: fallingStarAni 2s linear infinite;
+}
+
+@keyframes fallingStarAni {
+  0% {
+    top: 40px;
+    left: 40px;
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0.8;
+  }
+
+  100% {
+    top: 30vh;
+    left: 105%;
+    opacity: 0;
+  }
+}
