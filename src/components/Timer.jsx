@@ -21,7 +21,7 @@ const Timer = () => {
     if (isRunning && time > 0) {
       interval = setInterval(() => {
         setTime((prev) => prev - 1); //decrement prev state (setTime) whit 1 every sec
-      }, 10);
+      }, 1000);
     }
     return () => clearInterval(interval);
   }, [isRunning, time]); //executes when dep changes
