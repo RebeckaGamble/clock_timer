@@ -6,11 +6,13 @@
 
 .pageTitle {
   display: flex;
-  justify-content: center;
-  margin-bottom: 44px;
+  margin-bottom: 88px;
+  margin-top: 44px;
+  padding-left: 8px;
   font-size: 36px;
   /*text-shadow: 0.5px 1px #fff;*/
   color: rgb(201, 188, 180);
+  
 }
 
 .clockContainer {
@@ -48,6 +50,7 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
+  padding-bottom: 88px;
 }
 
 .countDown {
@@ -174,5 +177,20 @@ button:focus {
     top: 30vh;
     left: 105%;
     opacity: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .clockContainer {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    
+    margin-bottom: 100px;
+  }
+
+  .moon {
+    width: 120px;
+    height: 120px;
   }
 }
